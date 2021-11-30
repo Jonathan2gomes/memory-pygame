@@ -1,4 +1,4 @@
-# import cv2
+import cv2
 import os
 import pygame
 import random
@@ -35,7 +35,7 @@ class Game():
         self.level_complete = False
 
         # plants
-        self.all_plants = [f for f in os.listdir('images/plants') if os.path.join('images/plants', f)]
+        self.all_plants = [f for f in os.listdir('../plants') if os.path.join('../plants', f)]
 
         self.img_width, self.img_height = (128, 128)
         self.padding = 20
@@ -56,21 +56,21 @@ class Game():
 
         # initialize video
         self.is_video_playing = True
-        self.play = pygame.image.load('images/play2.png').convert_alpha()
-        self.stop = pygame.image.load('images/pause2.png').convert_alpha()
+        self.play = pygame.image.load('../play2.png').convert_alpha()
+        self.stop = pygame.image.load('../pause2.png').convert_alpha()
         self.video_toggle = self.play
         self.video_toggle_rect = self.video_toggle.get_rect(topright=(WINDOW_WIDTH - 50, 10))
         self.get_video()
 
         # initialize music
         self.is_music_playing = True
-        self.sound_on = pygame.image.load('images/sound2.png').convert_alpha()
-        self.sound_off = pygame.image.load('images/mute2.png').convert_alpha()
+        self.sound_on = pygame.image.load('../sound2.png').convert_alpha()
+        self.sound_off = pygame.image.load('../mute2.png').convert_alpha()
         self.music_toggle = self.sound_on
         self.music_toggle_rect = self.music_toggle.get_rect(topright=(WINDOW_WIDTH - 10, 10))
 
         # load music
-        pygame.mixer.music.load('sounds/picnic.mp3')
+        pygame.mixer.music.load('../../sounds/picnic.mp3')
         pygame.mixer.music.set_volume(.3)
         pygame.mixer.music.play()
 
@@ -171,8 +171,8 @@ class Game():
         screen.fill(BLACK)
 
         # fonts
-        title_font = pygame.font.Font('fonts/font.ttf', 44)
-        content_font = pygame.font.Font('fonts/font.ttf', 24)
+        title_font = pygame.font.Font('../../fonts/font.ttf', 44)
+        content_font = pygame.font.Font('../../fonts/font.ttf', 24)
 
         # text
         title_text = title_font.render('Jogo da Memória', True, WHITE)

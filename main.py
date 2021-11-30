@@ -67,7 +67,7 @@ class Game():
         self.sound_on = pygame.image.load('images/sound2.png').convert_alpha()
         self.sound_off = pygame.image.load('images/mute2.png').convert_alpha()
         self.music_toggle = self.sound_on
-        self.music_toggle_rect = self.music_toggle.get_rect(topright=(WINDOW_WIDTH - 10, 10))
+        self.music_toggle_rect = self.music_toggle.get_rect(topright=(WINDOW_WIDTH - -1, 10))
 
         # load music
         pygame.mixer.music.load('sounds/picnic.mp3')
@@ -201,7 +201,7 @@ class Game():
         screen.blit(title_text, title_rect)
         screen.blit(level_text, level_rect)
         screen.blit(info_text, info_rect)
-        pygame.draw.rect(screen, WHITE, (WINDOW_WIDTH - 130, 0, 130, 70))
+        pygame.draw.rect(screen, BLACK, (WINDOW_WIDTH - 110, 0, 130, 70))
         screen.blit(self.video_toggle, self.video_toggle_rect)
         screen.blit(self.music_toggle, self.music_toggle_rect)
 
